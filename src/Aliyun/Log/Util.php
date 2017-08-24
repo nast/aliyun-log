@@ -158,20 +158,17 @@ class Aliyun_Log_Util {
      *
      * @return string
      */
-    public static function canonicalizedLOGHeaders($header)
-    {
-        ksort($header);
+    public static function canonicalizedLOGHeaders($header) {
+        ksort ( $header );
         $content = '';
         $first = true;
-        foreach ($header as $key => $value){
-            if (strpos($key, "x-log-") === 0 || strpos($key, "x-acs-") === 0) { // x-log- header
-                if ($first) {
-                    $content .= $key . ':' . $value;
-                    $first = false;
-                } else {
-                    $content .= "\n" . $key . ':' . $value;
-                }
-            }
+        foreach ( $header as $key => $value )
+            if (strpos ( $key, "x-log-" ) === 0 || strpos ( $key, "x-acs-" ) === 0) { // x-log- header
+            if ($first) {
+                $content .= $key . ':' . $value;
+                $first = false;
+            } else
+                $content .= "\n" . $key . ':' . $value;
         }
         return $content;
     }
