@@ -6,7 +6,6 @@
   },
   "autoload": {
     "psr-0": {
-      "Aliyun\\Log\\": "src/",
       "Aliyun_Log_": "src/"
     }
   }
